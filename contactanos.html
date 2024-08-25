@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Catálogo de Guías Turísticos</title>
+    <link rel="stylesheet" href="css/contactanos.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>Guías Turísticos</h1>
+           
+        </div>
+    </header>
+
+    <main>
+        <!-- Formulario para agregar guías turísticos -->
+        <section id="formulario">
+            <h2>Agregar Guía Turístico</h2>
+            <form id="add-guide-form" action="guias.php" method="POST" enctype="multipart/form-data">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" name="nombre" required>
+
+                <label for="colonia">Colonia:</label>
+                <input type="text" id="colonia" name="colonia" required>
+
+                <label for="municipio">Municipio:</label>
+                <input type="text" id="municipio" name="municipio" required>
+
+                <label for="foto">Foto:</label>
+                <input type="file" id="foto" name="foto" accept="image/*" required>
+
+                <button type="submit">Agregar Guía</button>
+            </form>
+        </section>
+
+        <!-- Buscador -->
+        <section id="buscador">
+            <h2>Buscar Guía Turístico</h2>
+            <input type="text" id="search-input" placeholder="Buscar por nombre, colonia o municipio...">
+        </section>
+
+        <!-- Contenedor de Cards -->
+        <div class="cards-container" id="cards-container">
+            <?php include 'generar_cards.php'; ?>
+        </div>
+    </main>
+
+    <!-- Enlace al archivo JavaScript -->
+    <script src="js/contactanos.js"></script>
+</body>
+</html>
